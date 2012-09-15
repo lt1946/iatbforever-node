@@ -1,4 +1,5 @@
 var todo = require('../controllers/todo');
+var htmlaction = require('../controllers/htmlaction');
 exports.init=function(app){
 	/**
 	 * Routing
@@ -10,4 +11,6 @@ exports.init=function(app){
 	app.post('/todo/:id/edit', todo.save);
 	app.get('/todo/:id/delete', todo.delete);
 	app.get('/todo/:id/finish', todo.finish);
+	
+	app.get("/monitor.html",htmlaction.monitor);
 }
